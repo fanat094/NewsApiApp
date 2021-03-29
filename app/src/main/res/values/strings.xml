@@ -18,7 +18,7 @@
     <string name="dark_theme_name">Dark theme</string>
 
     <string name="github_title">Github</string>
-    <string name="github_data">https://github.com/</string>
+    <string name="github_data">https://github.com/fanat094/NewsApiApp</string>
 
     <string name="follow_system_value" translatable="false">System</string>
     <string name="light_theme_value" translatable="false">Light</string>
