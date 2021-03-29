@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">NewsApiApp</string>
+    <string name="empty_items">Empty News</string>
+    <string name="label_news_headlines">Headlines</string>
+    <string name="label_news_everything">News</string>
+    <string name="label_news_details">Details</string>
+    <string name="error_massage">Sorry, something went wrong</string>
+    <string name="label_news_details_read_more">Read more…</string>
+    <string name="label_retry">retry</string>
+    <string name="label_settings">Settings</string>
+    <!-- Preference Titles -->
+    <string name="general_category">General</string>
+    <!-- Basic Preferences -->
+    <string name="theme_title">Theme</string>
+    <!-- Theme Preferences -->
+    <string name="follow_system_name">Follow system</string>
+    <string name="light_theme_name">Light theme</string>
+    <string name="dark_theme_name">Dark theme</string>
+
+    <string name="github_title">Github</string>
+    <string name="github_data">https://github.com/</string>
+
+    <string name="follow_system_value" translatable="false">System</string>
+    <string name="light_theme_value" translatable="false">Light</string>
+    <string name="dark_theme_value" translatable="false">Dark</string>
+</resources>

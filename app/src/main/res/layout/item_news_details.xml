@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="articleUi"
+            type="com.dyamschikov.newsapiapp.data.modelui.ArticleUi" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/news_details_urlToImage_item"
+                loadThumbnail="@{articleUi.urlToImage}"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_size_details_iv"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@mipmap/ic_news_app" />
+
+            <ImageView
+                android:id="@+id/news_details_share_source_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_s"
+                android:layout_marginTop="@dimen/dimen_e"
+                android:contentDescription="@null"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/news_details_urlToImage_item"
+                app:srcCompat="@drawable/ic_baseline_person_24" />
+
+            <TextView
+                android:id="@+id/news_details_source_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_f"
+                android:text="@{articleUi.getSource()}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                app:layout_constraintBottom_toBottomOf="@+id/news_details_share_source_item"
+                app:layout_constraintStart_toEndOf="@+id/news_details_share_source_item"
+                app:layout_constraintTop_toTopOf="@+id/news_details_share_source_item"
+                tools:text="string/source" />
+
+            <TextView
+                android:id="@+id/news_details_title_item"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_e"
+                android:layout_marginTop="@dimen/dimen_e"
+                android:layout_marginEnd="@dimen/dimen_e"
+                android:maxLines="4"
+                android:text="@{articleUi.getArticleTitle()}"
+                android:textAppearance="@style/Theme.NewsApiApp.ArticleTitleDetailsTextAppearance"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/news_details_source_item"
+                tools:text="string/title" />
+
+            <TextView
+                android:id="@+id/news_details_description_item"
+                goneUnless="@{!articleUi.isDescriptionEmpty()}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_e"
+                android:layout_marginTop="@dimen/dimen_e"
+                android:layout_marginEnd="@dimen/dimen_e"
+                android:layout_marginBottom="@dimen/dimen_e"
+                android:text="@{articleUi.description}"
+                android:textAppearance="@style/Theme.NewsApiApp.ArticleDescriptionTextAppearance"
+                app:layout_constraintBottom_toTopOf="@+id/news_details_read_more_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/news_details_title_item"
+                tools:text="string/description_text" />
+
+            <ImageView
+                android:id="@+id/news_details_share_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_e"
+                android:layout_marginEnd="@dimen/dimen_e"
+                android:contentDescription="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/news_details_urlToImage_item"
+                app:srcCompat="@drawable/ic_share" />
+
+            <Button
+                android:id="@+id/news_details_read_more_btn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_e"
+                android:layout_marginTop="@dimen/dimen_e"
+                android:layout_marginEnd="@dimen/dimen_e"
+                android:layout_marginBottom="@dimen/dimen_e"
+                android:text="@string/label_news_details_read_more"
+                android:textAppearance="@style/Theme.NewsApiApp.ArticleReadMoreTextAppearance"
+                android:textColor="?android:attr/textColorSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/news_details_description_item" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

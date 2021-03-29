@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/header_cv"
+            android:layout_width="@dimen/dimen_size_header_w"
+            android:layout_height="@dimen/dimen_size_header_h"
+            android:layout_margin="@dimen/dimen_f"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardCornerRadius="@dimen/dimen_e"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/header_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dimen_size_header_iv_h"
+                    android:layout_marginStart="@dimen/dimen_f"
+                    android:layout_marginTop="@dimen/dimen_f"
+                    android:layout_marginEnd="@dimen/dimen_f"
+                    android:padding="@dimen/dimen_f"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/shapeImageView"
+                    tools:srcCompat="@drawable/ic_flag_ua" />
+
+                <TextView
+                    android:id="@+id/header_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_f"
+                    android:layout_marginTop="@dimen/dimen_e"
+                    android:layout_marginEnd="@dimen/dimen_f"
+                    android:layout_marginBottom="@dimen/dimen_e"
+                    android:textAppearance="@style/Theme.NewsApiApp.TitleHeaderTextAppearance"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/header_iv"
+                    tools:text="Ukraine" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

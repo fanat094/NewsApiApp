@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_sx">16dp</dimen>
+    <dimen name="dimen_tw">12dp</dimen>
+    <dimen name="dimen_e">8dp</dimen>
+    <dimen name="dimen_s">6dp</dimen>
+    <dimen name="dimen_f">4dp</dimen>
+    <dimen name="dimen_size_details_iv">250dp</dimen>
+    <dimen name="dimen_size_iv">100dp</dimen>
+    <dimen name="dimen_size_header_w">100dp</dimen>
+    <dimen name="dimen_size_header_h">130dp</dimen>
+    <dimen name="dimen_size_header_iv_h">90dp</dimen>
+    <dimen name="dimen_size_progressbar">40dp</dimen>
+</resources>

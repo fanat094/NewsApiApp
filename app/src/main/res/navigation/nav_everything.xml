@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_everything"
+    app:startDestination="@id/news_everything_fragment">
+
+    <fragment
+        android:id="@+id/news_everything_fragment"
+        android:name="com.dyamschikov.newsapiapp.newseverything.presentation.view.NewsEverythingFragment"
+        android:label="@string/label_news_everything" >
+    <action
+        android:id="@+id/news_everything_fragment_to_news_details_fragment"
+        app:destination="@id/news_details_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/news_details_fragment"
+        android:name="com.dyamschikov.newsapiapp.newsdetailsnews.presentation.view.NewsDetailsFragment"
+        android:label="@string/label_news_details"
+        app:popUpTo="@+id/news_headlines_fragment">
+        <argument
+            android:name="articlePosition"
+            app:argType="integer" />
+        <argument
+            android:name="articleList"
+            app:argType="com.dyamschikov.newsapiapp.data.modelui.ArticleUi[]" />
+    </fragment>
+
+</navigation>

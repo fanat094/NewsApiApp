@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="articleUi"
+            type="com.dyamschikov.newsapiapp.data.modelui.ArticleUi" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/row_article_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/pic_article_iv"
+            android:layout_width="@dimen/dimen_size_iv"
+            android:layout_height="@dimen/dimen_size_iv"
+            android:layout_marginStart="@dimen/dimen_sx"
+            android:layout_marginTop="@dimen/dimen_e"
+            android:layout_marginBottom="@dimen/dimen_e"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loadThumbnail="@{articleUi.urlToImage}"
+            app:shapeAppearanceOverlay="@style/shapeImageView"
+            tools:srcCompat="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/title_article_iv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_sx"
+            android:layout_marginTop="@dimen/dimen_e"
+            android:layout_marginEnd="@dimen/dimen_e"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@{articleUi.getArticleTitle()}"
+            android:textAppearance="@style/Theme.NewsApiApp.ArticleTitleTextAppearance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/pic_article_iv"
+            app:layout_constraintTop_toTopOf="@+id/pic_article_iv"
+            tools:text="Ринкова вартість Tesla вперше сягнула 800 мільярдів доларів" />
+
+        <TextView
+            android:id="@+id/publishedAt_article_iv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_e"
+            android:layout_marginBottom="@dimen/dimen_e"
+            android:text="@{articleUi.getDate()}"
+            android:textAppearance="@style/Theme.NewsApiApp.ArticleDateTextAppearance"
+            app:layout_constraintBottom_toBottomOf="@+id/pic_article_iv"
+            app:layout_constraintEnd_toEndOf="@+id/title_article_iv"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/title_article_iv"
+            app:layout_constraintTop_toBottomOf="@+id/title_article_iv"
+            tools:text="Date" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
